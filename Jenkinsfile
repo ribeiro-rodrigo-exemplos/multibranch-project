@@ -1,14 +1,11 @@
 pipeline{
-    agent any 
+    agent {
+        docker {image 'node:7-alphine'}
+    } 
     stages{
-        stage('Build'){
-            steps{
-                echo  "Builind... release ${env.BRANCH_NAME}"
-            }
-        }
         stage('Test'){
             steps{
-                echo "Testing... release ${env.CHANGE_ID}"
+                sh 'node --version'
             }
         }
     }
