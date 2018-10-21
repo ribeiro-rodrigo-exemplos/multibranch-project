@@ -9,7 +9,7 @@ pipeline{
                 sh 'mvn --version'
                 sh 'touch arquivo.txt'
                 sh 'echo "rodrigo ribeiro" >> arquivo.txt'
-                stash includes:'arquivo.txt' name: 'arquivo'
+                stash includes:'arquivo.txt', name: 'arquivo'
             }
         }
         stage('Front-end'){
