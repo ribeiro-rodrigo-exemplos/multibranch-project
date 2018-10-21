@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo  'Builind... release'
+                echo  "Builind... release ${env.BRANCH_NAME}"
             }
         }
         stage('Test'){
             steps{
-                echo 'Testing... release'
+                echo "Testing... release ${env.CHANGE_ID}"
             }
         }
     }
